@@ -18,7 +18,7 @@ function App() {
                 {/* TODO: implement components below */}
 				<Route exact path="/login" component={Login} />
 				{/* <Route exact path="/signup" component={Signup} /> */}
-				<PrivateRoute path="/" component={AlreadyLoggedIn} />
+				{/* <PrivateRoute path="/" component={AlreadyLoggedIn} /> */}
 			</Switch>
 		</>
 	);

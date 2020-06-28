@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { Redirect } from "react-router-dom";
+import { login } from "../reducers/authentication";
+import { useSelector, useDispatch } from "react-redux";
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -82,7 +85,7 @@ export default function SignIn() {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          Sign in
+          Sign in to SoundSpace
         </Typography>
         <form className={classes.form} noValidate>
           <TextField
