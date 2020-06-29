@@ -54,7 +54,7 @@ export default function Signin() {
 
   const [email, setEmail] = useState("demo_user@gmail.com");
   const [password, setPassword] = useState("password");
-  const [username, setUsername] = useState("Demo User");
+  const [username, /*setUsername*/] = useState("Demo User");
   const id = useSelector((state) => state.User.id);
   const dispatch = useDispatch();
 

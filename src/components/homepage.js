@@ -1,13 +1,13 @@
 import React from 'react';
-import Navbar from "./components/navbar";
-import Coverflow from "./components/coverflow";
+import Navbar from "./navbar";
+import Coverflow from "./coverFlow";
 
 
 export default function Homepage() {
   return (
-    <Container component="main" maxWidth="xs">
+    <>
       <Navbar />
       <Coverflow />
-    </Container>
+    </>
   );
 }

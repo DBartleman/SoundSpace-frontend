@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Redirect } from "react-router-dom";
 import { signup } from "../reducers/authentication";
 import { useSelector, useDispatch } from "react-redux";
