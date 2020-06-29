@@ -1,9 +1,9 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import { Route, Switch, Redirect } from "react-router-dom";
 import Login from "./components/login";
 import Signup from "./components/signup";
 import ForgotPassword from "./components/forgotPassword";
+import Homepage from "./components/homepage";
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
 	<Route {...rest} render={(props) => (
@@ -17,11 +17,10 @@ function App() {
 	return (
 		<>
 			<Switch>
-                {/* TODO: implement components below */}
 				<Route exact path="/login" component={Login} />
 				<Route exact path="/signup" component={Signup} />
 				<Route exact path="/forgot" component={ForgotPassword} />
-				{/* <PrivateRoute path="/" component={AlreadyLoggedIn} /> */}
+				<PrivateRoute path="/" component={Homepage} />
 			</Switch>
 		</>
 	);
