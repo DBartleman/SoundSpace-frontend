@@ -1,13 +1,10 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
-import { login } from "../reducers/authentication";
 import { useSelector, useDispatch } from "react-redux";
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
 import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 // import Box from '@material-ui/core/Box';
@@ -49,18 +46,18 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Signin() {
+export default function ForgotPassword() {
   const classes = useStyles();
 
   const [email, setEmail] = useState("demo_user@gmail.com");
-  const [password, setPassword] = useState("password");
-  const [username, setUsername] = useState("Demo User");
+  // const [password, setPassword] = useState("password");
+  // const [username, setUsername] = useState("Demo User");
   const id = useSelector((state) => state.User.id);
-  const dispatch = useDispatch();
+  //const dispatch = useDispatch();
 
   const handleSubmit = async (e) => {
       e.preventDefault();
-      dispatch(login(email, username, password));
+      //dispatch(login(email, username, password));
   };
   const updateEmail = (e) => {
       setEmail(e.target.value);
@@ -69,9 +66,7 @@ export default function Signin() {
 //       setUsername(e.target.value);
 //   };
 // TODO: change form to accept both username or password, or incorporate username somehow
-  const updatePassword = (e) => {
-    setPassword(e.target.value);
-  };
+
 
   if (id) {
     return <Redirect to="/" />;
@@ -85,7 +80,9 @@ export default function Signin() {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          Sign in to SoundSpace
+          Forgot your password? 
+          <br /> 
+          Enter your email address and we will send you steps to reset it.
         </Typography>
         <form className={classes.form} noValidate>
           <TextField
@@ -100,22 +97,6 @@ export default function Signin() {
             autoFocus
             onChange={updateEmail}
           />
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            name="password"
-            label="Password"
-            type="password"
-            id="password"
-            autoComplete="current-password"
-            onChange={updatePassword}
-          />
-          <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />}
-            label="Remember me"
-          />
           <Button
             type="submit"
             fullWidth
@@ -124,17 +105,17 @@ export default function Signin() {
             className={classes.submit}
             onClick={handleSubmit}
           >
-            Sign In
+            Send Email
           </Button>
           <Grid container>
-            <Grid item xs>
-              <Link href="/forgot" variant="body2">
+            {/* <Grid item xs>
+              <Link href="#" variant="body2">
                 Forgot password?
               </Link>
-            </Grid>
+            </Grid> */}
             <Grid item>
-              <Link href="/signup" variant="body2">
-                {"Don't have an account? Sign Up"}
+              <Link href="/login" variant="body2">
+                {"Back to login page"}
               </Link>
             </Grid>
           </Grid>

@@ -1,6 +1,4 @@
-import { baseUrl } from "../config";
 import jwt_decode from "jwt-decode";
-
 
 export const SET_TOKEN = "soundspace/authentication/SET_TOKEN";
 const REMOVE_TOKEN = "soundspace/authentication/REMOVE_TOKEN";
@@ -43,7 +41,7 @@ export const get_profile = (id) => async (dispatch) => {
 };
 
 export const login = (email, username, password) => async (dispatch) => {
-    const response = await fetch(`http://localhost:3000/login`, {
+    const response = await fetch(`http://localhost:5000/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, username, password }),
@@ -55,6 +53,8 @@ export const login = (email, username, password) => async (dispatch) => {
 
         const decodedUser = jwt_decode(res.token);
         dispatch(setToken(decodedUser));
+    } else {
+        console.log("could not log in user, response not ok")
     }
 };
 
@@ -64,7 +64,7 @@ export const logout = () => async (dispatch, getState) => {
 };
 
 export const signup = (email, username, password) => async (dispatch) => {
-    const response = await fetch(`http://localhost:3000/signup`, {
+    const response = await fetch(`http://localhost:5000/signup`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
