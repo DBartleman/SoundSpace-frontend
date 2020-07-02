@@ -10,7 +10,7 @@ import App from "./App";
 let store;
 
 if (localStorage["soundspace/authentication/TOKEN"]) {
-  const decodedUser = jwt_decode(localStorage["flashnerd/authentication/TOKEN"])
+  const decodedUser = jwt_decode(localStorage["soundspace/authentication/TOKEN"])
   delete decodedUser["favoritealbums"]
   const preState = { User: decodedUser }
   store = storeConfig(preState)

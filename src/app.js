@@ -7,7 +7,7 @@ import Homepage from "./components/homepage";
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
 	<Route {...rest} render={(props) => (
-		localStorage.getItem("SoundSpace/authentication/TOKEN")
+		localStorage.getItem("soundspace/authentication/TOKEN")
 			? <Component {...props} />
 			: <Redirect to='/login' />
 	)} />
@@ -17,10 +17,10 @@ function App() {
 	return (
 		<>
 			<Switch>
-				{/* <Route exact path="/login" component={Login} /> */}
+				<Route exact path="/login" component={Login} />
 				<Route exact path="/signup" component={Signup} />
 				<Route exact path="/forgot" component={ForgotPassword} />
-				<PrivateRoute path="/login" component={Homepage} />
+				<PrivateRoute path="/" component={Homepage} />
 			</Switch>
 		</>
 	);

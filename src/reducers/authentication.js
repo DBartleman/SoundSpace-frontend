@@ -22,7 +22,7 @@ export const loadToken = () => async (dispatch) => {
 export const get_profile = (id) => async (dispatch) => {
     const token = window.localStorage.getItem(TOKEN_KEY);
     if (token) {
-        const response = await fetch(`http://localhost:3000/users/${id}`, {
+        const response = await fetch(`http://localhost:5000/users/${id}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -88,7 +88,7 @@ export default function reducer(state = {}, action) {
                 ...state,
                 id: action.payload.id,
                 username: action.payload.username,
-                favoritealbums: action.payload.favoritealbums
+                favoriteAlbums: action.payload.favoriteAlbums
             };
         case REMOVE_TOKEN:
             const newState = {};
