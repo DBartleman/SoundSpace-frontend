@@ -1,31 +1,62 @@
-import React from 'react';
+import React, { Component } from 'react';
+// import ReactDOM from 'react-dom'; 
+// no reactDOM renders anymore, this is a react component
+import Coverflow from 'react-coverflow';
 
+/**
+ * Credit for most of this file goes to the creators of react-coverflow
+ * I edited parts of this to make it an actual importable react class,
+ *  as well as sanity changes like fixing the spelling of "random" and 
+ *  other assets, labels and variables 
+ */
 
-export default function Coverflow() {
-  // componentDidMount() {
-  //   const script = document.createElement("script");
-  //   script.async = true;
-  //   script.src = "https://some-scripturl.js";
-  //   this.div.appendChild(script);
-  // }
-  return (
-    <>
-      <div className="gallery">
-        <div className="gallery-container">
-          <img className="gallery-item" src={require('../album_art_test/01.jpg')} />
-          <img className="gallery-item" src={require('../album_art_test/02.jpg')} />
-          <img className="gallery-item" src={require('../album_art_test/03.jpg')} />
-          <img className="gallery-item" src={require('../album_art_test/04.jpg')} />
-          <img className="gallery-item" src={require('../album_art_test/05.jpg')} />
-          <img className="gallery-item" src={require('../album_art_test/06.jpg')} />
-          <img className="gallery-item" src={require('../album_art_test/07.jpg')} />
-          <img className="gallery-item" src={require('../album_art_test/08.jpg')} />
-          <img className="gallery-item" src={require('../album_art_test/09.jpg')} />
-          <img className="gallery-item" src={require('../album_art_test/10.jpg')} />
-        </div>
-        <div className="gallery-controls" />
+class CoverFlow extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      active: 0
+    };
+  }
+
+  render() {
+    return (
+      <div>
+        {/* <button onClick={this._handleClick.bind(this)}>Random</button> */}
+        <Coverflow
+          width={960}
+          height={480}
+          displayQuantityOfSide={2}
+          navigation={true}
+          enableHeading={false}
+          active={this.state.active}
+        >
+          <div
+            // onClick={() => fn()}
+            // onClick should start playing the track, possibly
+            // onKeyDown={() => fn()}
+            role="menuitem"
+            tabIndex="0"
+          >
+            <img src={require('../album_art_test/01.jpg')} alt='Album one' />
+          </div>
+          <img src={require('../album_art_test/02.jpg')} alt='Album two' />
+          <img src={require('../album_art_test/03.jpg')} alt='Album three'/>
+          <img src={require('../album_art_test/04.jpg')} alt='Album four' />
+          <img src={require('../album_art_test/05.jpg')} alt='Album five' />
+          <img src={require('../album_art_test/06.jpg')} alt='Album six' />
+          <img src={require('../album_art_test/07.jpg')} alt='Album seven' />
+        </Coverflow>
       </div>
-      <script src="../carousel.js"></script>
-    </>
-  );
-}
+    );
+  }
+
+  _handleClick() {
+    var num = Math.floor((Math.random() * 10) + 1);
+    this.setState({
+      active: num
+    });
+  }
+};
+
+export default CoverFlow;
