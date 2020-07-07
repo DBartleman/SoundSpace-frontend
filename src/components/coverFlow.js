@@ -38,8 +38,9 @@ class CoverFlow extends Component {
             role="menuitem"
             tabIndex="0"
           >
-            <img src={require('../album_art_test/01.jpg')} alt='Album one' />
+            
           </div>
+          <img src={require('../album_art_test/01.jpg')} alt='Album one' />
           <img src={require('../album_art_test/02.jpg')} alt='Album two' />
           <img src={require('../album_art_test/03.jpg')} alt='Album three'/>
           <img src={require('../album_art_test/04.jpg')} alt='Album four' />
