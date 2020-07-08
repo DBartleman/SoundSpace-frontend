@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function songPlaybackDrawer(props) {
+function SongPlaybackDrawer(props) {
   const { window } = props;
   const classes = useStyles();
   const theme = useTheme();
@@ -92,7 +92,7 @@ function songPlaybackDrawer(props) {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <AppBar position="fixed" className={classes.appBar}>
+      {/* <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -107,14 +107,15 @@ function songPlaybackDrawer(props) {
             Responsive drawer
           </Typography>
         </Toolbar>
-      </AppBar>
+      </AppBar> */}
       <nav className={classes.drawer} aria-label="mailbox folders">
         {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
         <Hidden smUp implementation="css">
           <Drawer
             container={container}
             variant="temporary"
-            anchor={theme.direction === 'rtl' ? 'bottom' : 'bottom'}
+            anchor={theme.direction === 'rtl' ? 'left' : 'bottom'}
+            // anchor={theme.direction === 'bottom'}
             open={mobileOpen}
             onClose={handleDrawerToggle}
             classes={{
@@ -132,24 +133,24 @@ function songPlaybackDrawer(props) {
             classes={{
               paper: classes.drawerPaper,
             }}
-            variant="permanent"
+            variant="persistent"
             open
           >
             {drawer}
           </Drawer>
         </Hidden>
       </nav>
-      <main className={classes.content}>
+      {/* <main className={classes.content}>
         <div className={classes.toolbar} />
         <Typography paragraph>
           main page example to be deleted later
         </Typography>
-      </main>
+      </main> */}
     </div>
   );
 }
 
-songPlaybackDrawer.propTypes = {
+SongPlaybackDrawer.propTypes = {
   /**
    * Injected by the documentation to work in an iframe.
    * You won't need it on your project.
@@ -157,4 +158,4 @@ songPlaybackDrawer.propTypes = {
   window: PropTypes.func,
 };
 
-export default songPlaybackDrawer;
+export default SongPlaybackDrawer;
