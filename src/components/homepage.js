@@ -8,7 +8,7 @@ export default function Homepage() {
     <>
       <Navbar />
       <CoverFlow />
-      {/* <SongPlayer /> */}
+      <SongPlayer />
     </>
   );
 }
