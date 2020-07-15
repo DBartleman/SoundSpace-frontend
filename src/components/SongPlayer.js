@@ -547,7 +547,7 @@ class SongPlayer extends React.PureComponent {
           </span>
           <span className="version">doc version: {version}</span>
         </h1> */}
-        <p className="version">
+        {/* <p className="version">
           <a
             href="https://badge.fury.io/js/react-jinke-music-playerr"
             title="npm"
@@ -557,8 +557,8 @@ class SongPlayer extends React.PureComponent {
               alt="npm version"
             />
           </a>
-        </p>
-        <h2 className="example-title">
+        </p> */}
+        {/* <h2 className="example-title">
           Drag, Click, or switch to phone mode to try{' '}
           <a
             target="_blank"
@@ -814,7 +814,7 @@ class SongPlayer extends React.PureComponent {
               onChange={(checked) =>
                 this.onChangeKey(checked ? 'mini' : 'full')
               }
-            />
+            /> */}
             {/* language :{params.locale}
             <Switch
               checkedChildren={'zh'}
@@ -824,9 +824,9 @@ class SongPlayer extends React.PureComponent {
                 this.onChangeKey(checked ? Locale.zh_CN : Locale.en_US)
               }
             /> */}
-          </div>
-          <div>{this.renderCustomUI()}</div>
-        </section>
+          {/* </div> */}
+          {/* <div>{this.renderCustomUI()}</div>
+        </section> */}
         {unmount ? null : (
           <ReactJkMusicPlayer
             {...params}
