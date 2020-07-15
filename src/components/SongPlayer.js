@@ -1,7 +1,7 @@
 import React from "react";
 import ReactJkMusicPlayer from "react-jinke-music-player";
-import Switch from 'rc-switch'
-//import PLAY_MODE from '../src/config/playMode'
+// import Switch from 'rc-switch'
+// import PLAY_MODE from '../src/config/playMode'
 import "react-jinke-music-player/assets/index.css";
 
 const audioList1 = [
@@ -58,12 +58,12 @@ const audioList2 = [
   },
 ]
 
-let PLAY_MODE = {
-  order: 'order',
-  orderLoop: 'orderLoop',
-  singleLoop: 'singleLoop',
-  shufflePlay: 'shufflePlay',
-}
+// let PLAY_MODE = {
+//   order: 'order',
+//   orderLoop: 'orderLoop',
+//   singleLoop: 'singleLoop',
+//   shufflePlay: 'shufflePlay',
+// }
 
 const options = {
   //audio lists model
@@ -108,7 +108,7 @@ const options = {
   remember: false,
 
   //The Audio Can be deleted  [type `Boolean`, default `true`]
-  remove: true,
+  remove: false,
 
   //audio controller initial position    [ type `Object` default '{top:0,left:0}' ]
   defaultPosition: {
@@ -171,7 +171,7 @@ const options = {
   showThemeSwitch: true,
 
   //lyric display of the audio player panel   [type `Boolean` default `false`]
-  showLyric: true,
+  showLyric: false,
 
   //destroy player button display  [type `Boolean` default `false`]
   showDestroy: true,
