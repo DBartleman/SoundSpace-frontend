@@ -1,6 +1,8 @@
 import React from "react";
 import ReactJkMusicPlayer from "react-jinke-music-player";
-import { ACCESS_KEY, SECRET_ACCESS_KEY } from '../config';
+import { access, secret, bucket, expiration } from '../config';
+
+console.log(`access: ${access} \n secret: ${secret} \n bucket: ${bucket} \n expiration: ${expiration} \n `);
 
 // import Switch from 'rc-switch'
 // import PLAY_MODE from '../src/config/playMode'
@@ -8,68 +10,126 @@ import "react-jinke-music-player/assets/index.css";
 import AWS from "aws-sdk";
 import { get_profile } from "../reducers/authentication";
 
+
 AWS.config.update(
   {
-    accessKeyId: ACCESS_KEY,
-    secretAccessKey: SECRET_ACCESS_KEY,
+    accessKeyId: access,
+    secretAccessKey: secret,
   }
 );
 
 const s3 = new AWS.S3();
 
-function getFile(fileName) {
-  s3.getObject(
-    { Bucket: "soundspace-1", Key: fileName },
-    function (error, data) {
-      if (error != null) {
-        alert("Failed to retrieve an object: " + error);
-      } else {
-        alert("Loaded " + data.ContentLength + " bytes");
-        return data.Body;
-      }
-    }
-  );
-}
+// function getFile(fileName) {
+//   s3.getObject(
+//     { Bucket: BUCKETNAME, Key: fileName },
+//     function (error, data) {
+//       if (error != null) {
+//         alert("Failed to retrieve an object: " + error);
+//       } else {
+//         alert("Loaded " + data.ContentLength + " bytes");
+//         return data.Body;
+//       }
+//     }
+//   );
+// }
 
 
 // NOTE: testing and development purposes only
 // TODO: replace with data from state 
+
+// const url0 = s3.getSignedUrl('getObject', {
+//   Bucket: BUCKETNAME,
+//   Key: "music/cb/cover.jpeg",
+//   Expires: EXPIRATION
+// });
+
+// const url1 = s3.getSignedUrl('getObject', {
+//   Bucket: "",
+//   Key: "music/cb/01_Tank.mp3",
+//   Expires: exp,
+// });
+
+// const url2 = s3.getSignedUrl('getObject', {
+//   Bucket: BUCKETNAME,
+//   Key: "music/cb/02_Rush.mp3",
+//   Expires: EXPIRATION
+// });
+
+// const url3 = s3.getSignedUrl('getObject', {
+//   Bucket: BUCKETNAME,
+//   Key: "music/cb/03_Spokey_Dokey.mp3",
+//   Expires: EXPIRATION
+// });
+
+// const url4 = s3.getSignedUrl('getObject', {
+//   Bucket: BUCKETNAME,
+//   Key: "music/cb/04_Bad_Dog_No_Biscuits.mp3",
+//   Expires: EXPIRATION
+// });
+
 const playlist = [
-  {
-    name: 'Battle Against an Unsettling Opponent',
-    singer: 'Earthbound',
-    cover:
-      'https://vgmdownloads.com/soundtracks/earthbound-snes/cover.jpg',
-    musicSrc: () => {
-      return Promise.resolve(
-        'https://vgmdownloads.com/soundtracks/earthbound-snes/exklygaaqr/49%20Battle%20Against%20an%20Unsettling%20Opponent.mp3',
-      )
-    },
-  },
-  {
-    name: 'Sanctuary Guardian\'s Challenge',
-    singer: 'Earthbound',
-    cover:
-      'https://vgmdownloads.com/soundtracks/earthbound-snes/cover.jpg',
-    musicSrc: () => {
-      return Promise.resolve(
-        'https://vgmdownloads.com/soundtracks/earthbound-snes/tvoudziisf/51%20Sanctuary%20Guardian%27s%20Challenge.mp3',
-      )
-    },
-  },
-  {
-  name: 'Snowman',
-  singer: 'Earthbound',
-  cover:
-    'https://vgmdownloads.com/soundtracks/earthbound-snes/cover.jpg',
-  musicSrc: () => {
-    return Promise.resolve(
-      'https://vgmdownloads.com/soundtracks/earthbound-snes/oamcapxnew/82%20Snowman.mp3',
-    )
-  },
-  },
-  
+  // {
+  //   name: 'Tank!',
+  //   singer: 'The Seatbelts',
+  //   cover: "https://vgmdownloads.com/soundtracks/earthbound-snes/cover.jpg",
+  //   musicSrc: () => {
+  //     return Promise.resolve(url1)
+  //   },
+  // },
+  // {
+  //   name: 'Rush',
+  //   singer: 'The Seatbelts',
+  //   cover: url0,
+  //   musicSrc: () => {
+  //     return Promise.resolve(url2)
+  //   },
+  // },
+  // {
+  //   name: 'Spokey Dokey',
+  //   singer: 'The Seatbelts',
+  //   cover: url0,
+  //   musicSrc: () => {
+  //     return Promise.resolve(url3)
+  //   },
+  // },
 ]
+
+// const playlist = [
+//   {
+//     name: 'Battle Against an Unsettling Opponent',
+//     singer: 'Earthbound',
+//     cover:
+//       'https://vgmdownloads.com/soundtracks/earthbound-snes/cover.jpg',
+//     musicSrc: () => {
+//       return Promise.resolve(
+//         'https://vgmdownloads.com/soundtracks/earthbound-snes/exklygaaqr/49%20Battle%20Against%20an%20Unsettling%20Opponent.mp3',
+//       )
+//     },
+//   },
+//   {
+//     name: 'Sanctuary Guardian\'s Challenge',
+//     singer: 'Earthbound',
+//     cover:
+//       'https://vgmdownloads.com/soundtracks/earthbound-snes/cover.jpg',
+//     musicSrc: () => {
+//       return Promise.resolve(
+//         'https://vgmdownloads.com/soundtracks/earthbound-snes/tvoudziisf/51%20Sanctuary%20Guardian%27s%20Challenge.mp3',
+//       )
+//     },
+//   },
+//   {
+//   name: 'Snowman',
+//   singer: 'Earthbound',
+//   cover:
+//     'https://vgmdownloads.com/soundtracks/earthbound-snes/cover.jpg',
+//   musicSrc: () => {
+//     return Promise.resolve(
+//       'https://vgmdownloads.com/soundtracks/earthbound-snes/oamcapxnew/82%20Snowman.mp3',
+//     )
+//   },
+//   },
+// ]
 
 const audioList2 = [];
 

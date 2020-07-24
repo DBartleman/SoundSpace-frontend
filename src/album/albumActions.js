@@ -1,7 +1,7 @@
 import { API } from '../config';
-export const FETCH_SEARCH_ALBUM = "FECTH_SEARCH_ALBUMS";
+export const FETCH_SEARCH_ALBUMS = "FETCH_SEARCH_ALBUMS";
 export const SEARCH_ALBUMS_BY_TITLE = "SEARCH_ALBUMS_BY_TITLE";
-export const FETCH_USER_ALBUMS = "FETCH_USER_ALBUMS";
+export const FETCH_USER_FAVORITES = "FETCH_USER_FAVORITES";
 export const FETCH_CURRENT_ALBUM = "FETCH_CURRENT_ALBUM"
 export const FAVORITE_ALBUM = "FAVORITE_ALBUM"
 export const EDIT_ALBUM = "EDIT_ALBUM";
@@ -21,9 +21,9 @@ export const fetchCurrentAlbum = (albums) => {
     };
 };
 
-export const fetchUserAlbums = (albums) => {
+export const fetchUserFavorites = (albums) => {
     return {
-        type: FETCH_USER_ALBUMS,
+        type: FETCH_USER_FAVORITES,
         payload: albums,
     };
 };
@@ -104,6 +104,6 @@ export const loggedInAlbums = (user_id) => async (dispatch) => {
     const response = await fetch(`${API}/user/${user_id}/favorites`);
     if (response.ok) {
         const res = await response.json();
-        dispatch(fetchUserAlbums(res));
+        dispatch(fetchUserFavorites(res));
     }
 };
