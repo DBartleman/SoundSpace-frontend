@@ -6,7 +6,6 @@ import { BrowserRouter } from "react-router-dom";
 import jwt_decode from 'jwt-decode'
 import App from "./App";
 
-
 let store;
 
 if (localStorage["soundspace/authentication/TOKEN"]) {
