@@ -5,6 +5,7 @@ import Signup from "./components/signup";
 import ForgotPassword from "./components/forgotPassword";
 import Homepage from "./components/homepage";
 import ArtistPage from "./components/artistPage";
+import AlbumPage from "./components/albumPage";
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
 	<Route {...rest} render={(props) => (
@@ -22,6 +23,7 @@ function App() {
 				<Route exact path="/signup" component={Signup} />
 				<Route exact path="/forgot" component={ForgotPassword} />
 				<Route exact path="/artist/:id" component={ArtistPage} />
+				<Route exact path="/album/:id" component={AlbumPage} />
 				<PrivateRoute path="/" component={Homepage} />
 			</Switch>
 		</>
