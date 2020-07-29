@@ -13,8 +13,8 @@ console.log(`access: ${access} \n secret: ${secret} \n bucket: ${bucket1} \n exp
 
 AWS.config.update(
     {
-        accessKeyId: "AKIA6LE77AJ6EEIOQHGC",
-        secretAccessKey: "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",
+        accessKeyId: "-",
+        secretAccessKey: "-",
     }
 );
 
