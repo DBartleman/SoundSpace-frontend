@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 // import ReactDOM from 'react-dom'; 
 // no reactDOM renders anymore, this is a react component
 import Coverflow from 'react-coverflow';
+import urlGenerator from "./downloader";
 
 /**
  * Credit for most of this file goes to the creators of react-coverflow
@@ -25,7 +26,7 @@ class CoverFlow extends Component {
         {/* <button onClick={this._handleClick.bind(this)}>Random</button> */}
         <Coverflow
           width={960}
-          height={500}
+          height={700}
           displayQuantityOfSide={2}
           navigation={true}
           enableHeading={false}
@@ -40,13 +41,16 @@ class CoverFlow extends Component {
           >
             
           </div>
-          <img src={require('../album_art_test/01.jpg')} alt='Album one' />
-          <img src={require('../album_art_test/02.jpg')} alt='Album two' />
-          <img src={require('../album_art_test/03.jpg')} alt='Album three'/>
-          <img src={require('../album_art_test/04.jpg')} alt='Album four' />
-          <img src={require('../album_art_test/05.jpg')} alt='Album five' />
-          <img src={require('../album_art_test/06.jpg')} alt='Album six' />
-          <img src={require('../album_art_test/07.jpg')} alt='Album seven' />
+          <img src={urlGenerator("music/air/cover.jpg")} alt='Album art - Air' />
+          <img src={urlGenerator("music/cb/cover.jpg")} alt='Album art - The Seatbelts' />
+          <img src={urlGenerator("music/fred/cover.jpg")} alt='Album art - Fred Hersch' />
+          <img src={urlGenerator("music/greg/cover.jpg")} alt='Album art - Greg Privat' />
+          <img src={urlGenerator("music/jim/cover.jpg")} alt='Album art - Jim Lang' />
+          <img src={urlGenerator("music/kat/cover.jpg")} alt='Album art - Kat Epple' />
+          <img src={urlGenerator("music/max/cover.jpg")} alt='Album art - Maxis' />
+          <img src={urlGenerator("music/mic/cover.jpg")} alt='Album art - Michael Naura' />
+          <img src={urlGenerator("music/mod/cover.jpg")} alt='Album art - Modern Jazz Quartet' />
+          <img src={urlGenerator("music/ryo/cover.jpg")} alt='Album art - Ryo Fukui' />
         </Coverflow>
       </div>
     );

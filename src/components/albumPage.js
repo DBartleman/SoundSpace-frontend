@@ -5,13 +5,19 @@ import urlGenerator from "./downloader";
 
 class AlbumPage extends React.Component {
 //   const url = urlGenerator("music/cb/cover.jpg");
-  render () {
-      Vibrant.from(urlGenerator("music/cb/cover.jpg").getPalette()
+  getColors() {
+    Vibrant.from(urlGenerator("music/cb/cover.jpg")).getPalette()
       .then((palette) => console.log(palette))
+  }
+  // divStyle = {
+  //   color: 'blue',
+  //   backgroundColor: 'red',
+  // };
+  render () {
     return (
         <div>
-          <style>{'body { background-color: red; }'}</style>
-          <img src={urlGenerator("music/cb/cover.jpg")} alt="Album Art" />
+          <style>{this.getColors()}</style>
+          {/* <img src={urlGenerator("music/cb/cover.jpg")} alt="Album Art" /> */}
         </div>
     );
   }
