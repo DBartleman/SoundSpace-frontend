@@ -42,7 +42,7 @@ class CoverFlow extends Component {
             
           </div>
           <img src={urlGenerator("music/air/cover.jpg")} alt='Album art - Air' />
-          <img src={urlGenerator("music/cb/cover.jpg")} alt='Album art - The Seatbelts' />
+          {/* <img src={urlGenerator("music/cb/cover.jpg")} alt='Album art - The Seatbelts' />
           <img src={urlGenerator("music/fred/cover.jpg")} alt='Album art - Fred Hersch' />
           <img src={urlGenerator("music/greg/cover.jpg")} alt='Album art - Greg Privat' />
           <img src={urlGenerator("music/jim/cover.jpg")} alt='Album art - Jim Lang' />
@@ -50,7 +50,7 @@ class CoverFlow extends Component {
           <img src={urlGenerator("music/max/cover.jpg")} alt='Album art - Maxis' />
           <img src={urlGenerator("music/mic/cover.jpg")} alt='Album art - Michael Naura' />
           <img src={urlGenerator("music/mod/cover.jpg")} alt='Album art - Modern Jazz Quartet' />
-          <img src={urlGenerator("music/ryo/cover.jpg")} alt='Album art - Ryo Fukui' />
+          <img src={urlGenerator("music/ryo/cover.jpg")} alt='Album art - Ryo Fukui' /> */}
         </Coverflow>
       </div>
     );
