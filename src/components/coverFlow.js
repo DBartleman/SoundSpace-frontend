@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-// import ReactDOM from 'react-dom'; 
-// no reactDOM renders anymore, this is a react component
 import Coverflow from 'react-coverflow';
 import urlGenerator from "./downloader";
 
