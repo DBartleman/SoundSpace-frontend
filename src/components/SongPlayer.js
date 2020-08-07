@@ -22,6 +22,8 @@ const playlist = [
 
 const audioList2 = [];
 
+const favicon = document.getElementById('favicon');
+// debugger;
 
 // let PLAY_MODE = {
 //   order: 'order',
@@ -474,31 +476,31 @@ class SongPlayer extends React.PureComponent {
     this.updateParams({ playMode: e.target.value })
   }
 
-  renderCustomUI = () => {
-    return (
-      <>
-        <h2>Custom UI</h2>
-        <button onClick={() => this.audio.play()}>play</button>
-        <button onClick={() => this.audio.pause()}>pause</button>
-        <button onClick={() => this.audio.load()}>reload</button>
-        <button onClick={() => (this.audio.currentTime = 40)}>
-          change current play time
-        </button>
-        <button onClick={() => (this.audio.playbackRate = 2)}>
-          change play back rate
-        </button>
-        <button onClick={() => (this.audio.volume = 0.2)}>change volume</button>
-        <button onClick={() => this.audio.destroy()}>destroy player</button>
-        <button onClick={() => this.audio.appendAudio(1, audioList2)}>append audio</button>
-        <button onClick={this.audio.togglePlay}>toggle play</button>
-        <button onClick={this.audio.clear}>clear audio lists</button>
-        <button onClick={this.audio.playNext}>play next</button>
-        <button onClick={this.audio.playPrev}>play prev</button>
-        <button onClick={() => this.audio.playByIndex(1)}>play by index</button>
-        <button onClick={() => this.audio.updatePlayIndex(1)}>updatePlayIndex</button>
-      </>
-    )
-  }
+  // renderCustomUI = () => {
+  //   return (
+  //     <>
+  //       <h2>Custom UI</h2>
+  //       <button onClick={() => this.audio.play()}>play</button>
+  //       <button onClick={() => this.audio.pause()}>pause</button>
+  //       <button onClick={() => this.audio.load()}>reload</button>
+  //       <button onClick={() => (this.audio.currentTime = 40)}>
+  //         change current play time
+  //       </button>
+  //       <button onClick={() => (this.audio.playbackRate = 2)}>
+  //         change play back rate
+  //       </button>
+  //       <button onClick={() => (this.audio.volume = 0.2)}>change volume</button>
+  //       <button onClick={() => this.audio.destroy()}>destroy player</button>
+  //       <button onClick={() => this.audio.appendAudio(1, audioList2)}>append audio</button>
+  //       <button onClick={this.audio.togglePlay}>toggle play</button>
+  //       <button onClick={this.audio.clear}>clear audio lists</button>
+  //       <button onClick={this.audio.playNext}>play next</button>
+  //       <button onClick={this.audio.playPrev}>play prev</button>
+  //       <button onClick={() => this.audio.playByIndex(1)}>play by index</button>
+  //       <button onClick={() => this.audio.updatePlayIndex(1)}>updatePlayIndex</button>
+  //     </>
+  //   )
+  // }
 
   render() {
     const { params, unmount } = this.state
@@ -811,6 +813,15 @@ class SongPlayer extends React.PureComponent {
               console.log('onPlayIndexChange: ', playIndex)
               this.updateParams({ playIndex })
             }}
+            onAudioPlay={() => 
+              favicon.href = "/play.png"
+            }
+            onAudioPause={() => 
+              favicon.href = "/pause.png"
+            }
+            onBeforeDestroy={() => 
+              favicon.href = "/stars.png"
+            }
           />
         )}
       </>
