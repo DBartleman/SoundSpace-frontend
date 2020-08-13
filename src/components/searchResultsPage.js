@@ -7,6 +7,9 @@ import Grid from '@material-ui/core/Grid';
 
 // TODO: EVERYTHING
 
+const results = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+
 const useStyles = makeStyles((theme) => ({
   container: {
     display: 'grid',
@@ -25,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function CSSGrid() {
+export default function SearchResultsPage() {
   const classes = useStyles();
 
   return (
@@ -34,49 +37,21 @@ export default function CSSGrid() {
         Material-UI Grid:
       </Typography>
       <Grid container spacing={3}>
-        <Grid item xs={3}>
-          <Paper className={classes.paper}>xs=3</Paper>
-        </Grid>
-        <Grid item xs={3}>
-          <Paper className={classes.paper}>xs=3</Paper>
-        </Grid>
-        <Grid item xs={3}>
-          <Paper className={classes.paper}>xs=3</Paper>
-        </Grid>
-        <Grid item xs={3}>
-          <Paper className={classes.paper}>xs=3</Paper>
+
+        <Grid item xs={8}>
+          <Paper className={classes.paper}>Album 1, by artist 1 [link to album] [add to favorites]</Paper>
         </Grid>
         <Grid item xs={8}>
-          <Paper className={classes.paper}>xs=8</Paper>
+          <Paper className={classes.paper}>Album 2, by artist 2 [link to album] [add to favorites]</Paper>
         </Grid>
-        <Grid item xs={4}>
-          <Paper className={classes.paper}>xs=4</Paper>
+        <Grid item xs={8}>
+          <Paper className={classes.paper}>Album 3, by artist 3 [link to album] [add to favorites]</Paper>
+        </Grid>
+        <Grid item xs={8}>
+          <Paper className={classes.paper}>Album 4, by artist 4 [link to album] [add to favorites]</Paper>
         </Grid>
       </Grid>
       <Divider className={classes.divider} />
-      <Typography variant="subtitle1" gutterBottom>
-        CSS Grid Layout:
-      </Typography>
-      <div className={classes.container}>
-        <div style={{ gridColumnEnd: 'span 3' }}>
-          <Paper className={classes.paper}>xs=3</Paper>
-        </div>
-        <div style={{ gridColumnEnd: 'span 3' }}>
-          <Paper className={classes.paper}>xs=3</Paper>
-        </div>
-        <div style={{ gridColumnEnd: 'span 3' }}>
-          <Paper className={classes.paper}>xs=3</Paper>
-        </div>
-        <div style={{ gridColumnEnd: 'span 3' }}>
-          <Paper className={classes.paper}>xs=3</Paper>
-        </div>
-        <div style={{ gridColumnEnd: 'span 8' }}>
-          <Paper className={classes.paper}>xs=8</Paper>
-        </div>
-        <div style={{ gridColumnEnd: 'span 4' }}>
-          <Paper className={classes.paper}>xs=4</Paper>
-        </div>
-      </div>
     </div>
   );
 }

@@ -16,7 +16,15 @@ const playlist = [
     cover: urlGenerator("music/cb/cover.jpg"),
     musicSrc: () => {
       return Promise.resolve(urlGenerator("music/cb/01_Tank.mp3"))
-    },
+    }
+  },
+  {
+    name: 'Rush',
+    singer: 'The Seatbelts',
+    cover: urlGenerator("music/cb/cover.jpg"),
+    musicSrc: () => {
+      return Promise.resolve(urlGenerator("music/cb/02_Rush.mp3"))
+    }
   },
 ]
 

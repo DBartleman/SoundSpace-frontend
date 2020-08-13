@@ -9,14 +9,11 @@ class AlbumPage extends React.Component {
     this.imageRef = React.createRef();
   }
   componentDidMount() { // after first render
-    debugger;
     this.getColors(this.imageRef);
   }
   getColors(imageRef) {
-    debugger;
     Vibrant.from(`${imageRef}`).getPalette(
       (err, palette) => { 
-        debugger;
         return palette; 
       });
     // const v = new Vibrant(urlGenerator("music/cb/cover.jpg"));
@@ -24,7 +21,6 @@ class AlbumPage extends React.Component {
   }
 
   render () {
-    debugger;
     // this.getColors(this.imageRef);
     return (
       <div>
