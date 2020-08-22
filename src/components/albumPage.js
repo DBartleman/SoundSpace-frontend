@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(1),
     textAlign: 'center',
     color: theme.palette.text.secondary,
-    whiteSpace: 'nowrap',
+    whiteSpace: 'wrap',
     marginBottom: theme.spacing(1),
   },
   divider: {
@@ -24,48 +24,64 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function AlbumPage() {
-  const albumData = []
 
   const classes = useStyles();
   const imgURL = urlGenerator("music/cb/cover.jpg");
-  const divStyle1 = {
-    padding: '50px',
-    margin: '0 auto',
-    // filter: 'blur(8px)',
-    backgroundImage: `url(${imgURL}`,
+  const divStyle0 = {
+    zIndex: '0', 
+    position: 'absolute',
+    height: '100vh',
+    width: '100vw',
+    filter: 'blur(8px)',
+    backgroundImage: `url(${imgURL})`,
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
+  }
+  const divStyle1 = {
+    padding: '50px',
+    margin: '0 auto',
+    zIndex: '1',
+    position: 'relative'
+
   };
   const divStyle2 = {
     backgroundColor: '#242424',
   };
+  const divStyle3 = {
+    padding: '30px',
+  }
   return (
-    <div style={divStyle1}>
-      <Box display="flex" flexDirection="row" alignItems="center" style={divStyle2}>
-        {/* <Box display="flex" flexDirection="column" alignItems="center"> */}
-        <Grid container direction="column" justify="center" alignItems="center" spacing={5}>
-          <Grid item xs={20}>
-            <Grid item xs={8}>
-              <Paper className={classes.paper}>sample 1</Paper>
-            </Grid>
-            <Grid item xs={8}>
-              <Paper className={classes.paper}>sample 2222222222</Paper>
-            </Grid>
-            <Grid item xs={8}>
-              <Paper className={classes.paper}>sample 3</Paper>
+    <>
+      <div style={divStyle0} />
+      <div style={divStyle1}>
+        <Box display="flex" flexDirection="row" justify="center" alignItems="stretch" style={divStyle2}>
+          <Grid container direction="column" justify="center" alignItems="center" spacing={5} style={divStyle3}>
+            <Grid item sm={20}>
+              <Grid item xs>
+                <Paper className={classes.paper}>Artist Name</Paper>
+              </Grid>
+              <Grid item xs>
+                <Paper className={classes.paper}>Album</Paper>
+              </Grid>
+              <Grid item xs>
+                <Paper className={classes.paper}>Add to Favorites button or something</Paper>
+              </Grid>
+              <Grid item xs>
+                <Paper className={classes.paper}>Extremely long description about the album to pique your interest and to provide something to read and interact with while listening</Paper>
+              </Grid>
             </Grid>
           </Grid>
-        </Grid>
-        {/* </Box> */}
-        {/* <Box display="flex" flexDirection="column" alignItems="center"> */}
-        <Grid container direction="column" justify="center" alignItems="center" spacing={5}>
-            <Grid item xs={8} sm>
+          {/* <Box display="flex" flexDirection="column" alignItems="center"> */}
+          <Grid container direction="column" justify="center" alignItems="center" spacing={5} style={divStyle3}>
+            <Grid item xs>
               <img src={urlGenerator("music/cb/cover.jpg")} alt='Album art - Air' />
             </Grid>
           </Grid>
-        {/* </Box> */}
-      </Box>
-    </div>
+          {/* </Box> */}
+        </Box>
+      </div>
+    </>
+    
   );
 };

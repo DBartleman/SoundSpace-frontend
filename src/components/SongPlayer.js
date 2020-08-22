@@ -137,7 +137,7 @@ const options = {
   showReload: true,
 
   //download button display of the audio player panel   [type `Boolean` default `true`]
-  showDownload: true,
+  showDownload: false,
 
   //loop button display of the audio player panel   [type `Boolean` default `true`]
   showPlayMode: true,

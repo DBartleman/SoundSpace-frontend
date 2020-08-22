@@ -116,7 +116,7 @@ export default function PrimarySearchAppBar() {
       onClose={handleMenuClose}
     >
       <MenuItem onClick={handleMenuClose}>Favorite Albums</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My Account</MenuItem>
+      <MenuItem onClick={handleMenuClose}>Logout</MenuItem>
     </Menu>
   );
 
@@ -162,7 +162,7 @@ export default function PrimarySearchAppBar() {
   );
 
   return (
-    <div className={classes.grow}>
+    <div className={classes.grow} style={zIndex='100'}>
       <AppBar position="static">
         <Toolbar>
           <IconButton
