@@ -81,6 +81,11 @@ const useStyles = makeStyles((theme) => ({
 
 export default function PrimarySearchAppBar() {
   const classes = useStyles();
+  const divStyle1 = {
+    zIndex: '100',
+    // position: 'absolute'
+  };
+
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -162,7 +167,7 @@ export default function PrimarySearchAppBar() {
   );
 
   return (
-    <div className={classes.grow} style={zIndex='100'}>
+    <div className={classes.grow} style={divStyle1}>
       <AppBar position="static">
         <Toolbar>
           <IconButton

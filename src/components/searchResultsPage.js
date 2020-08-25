@@ -1,14 +1,24 @@
 import React from 'react';
+import SingleAlbum from "./singleAlbumRender";
+import urlGenerator from "./downloader";
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import Paper from '@material-ui/core/Paper';
 import Divider from '@material-ui/core/Divider';
 import Grid from '@material-ui/core/Grid';
 
-// TODO: EVERYTHING
 
-const results = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// development and testing only - to be replaced with state in the future
+const albumData = {
+  artist: "The Seatbelts",
+  album: "Cowboy Bebop",
+  description: "",
+  coverArt: urlGenerator("music/cb/cover.jpg"),
+  songList: ""
+}
 
+const divStyle1 = {
+  padding: '50px',
+};
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -30,26 +40,17 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SearchResultsPage() {
   const classes = useStyles();
+  const searchTerm = "cowboy bebop";
 
   return (
-    <div>
+    <div style={divStyle1}>
       <Typography variant="subtitle1" gutterBottom>
-        Material-UI Grid:
+        Search results for "{searchTerm}":
       </Typography>
       <Grid container spacing={3}>
-
-        <Grid item xs={8}>
-          <Paper className={classes.paper}>Album 1, by artist 1 [link to album] [add to favorites]</Paper>
-        </Grid>
-        <Grid item xs={8}>
-          <Paper className={classes.paper}>Album 2, by artist 2 [link to album] [add to favorites]</Paper>
-        </Grid>
-        <Grid item xs={8}>
-          <Paper className={classes.paper}>Album 3, by artist 3 [link to album] [add to favorites]</Paper>
-        </Grid>
-        <Grid item xs={8}>
-          <Paper className={classes.paper}>Album 4, by artist 4 [link to album] [add to favorites]</Paper>
-        </Grid>
+        <SingleAlbum {...albumData} />   {/* Album showcase content */}
+        <SingleAlbum {...albumData} />   {/* Album showcase content */}
+        <SingleAlbum {...albumData} />   {/* Album showcase content */}
       </Grid>
       <Divider className={classes.divider} />
     </div>
