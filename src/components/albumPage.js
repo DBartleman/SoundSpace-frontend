@@ -8,9 +8,26 @@ export default function AlbumPage() {
   const albumData = {
     artist: "The Seatbelts",
     album: "Cowboy Bebop",
-    description: "",
+    description: "Cowboy Bebop is the first album created for the series, and the most easily categorized in terms of genre, as an outlet for many of the trademark bebop tracks. It begins with the show's theme song, \"Tank!\". The track \"Bad Dog No Biscuits\" opens with a cover of the Tom Waits composition \"Midtown\" before diverting in its interpretation.",
     coverArt: urlGenerator("music/cb/cover.jpg"),
-    songList: ""
+    songList: [
+      {
+        name: 'Tank!',
+        singer: "The Seatbelts",
+        cover: urlGenerator("music/cb/cover.jpg"),
+        musicSrc: () => {
+          return Promise.resolve(urlGenerator("music/cb/01_Tank.mp3"))
+        }
+      },
+      {
+        name: 'Rush',
+        singer: "The Seatbelts",
+        cover: urlGenerator("music/cb/cover.jpg"),
+        musicSrc: () => {
+          return Promise.resolve(urlGenerator("music/cb/02_Rush.mp3"))
+        }
+      },
+    ]
   }
 
   const divStyle0 = {

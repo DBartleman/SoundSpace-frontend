@@ -5,8 +5,8 @@ import urlGenerator from "./downloader";
 /**
  * Credit for most of this file goes to the creators of react-coverflow
  * I edited parts of this to make it an actual importable react class,
- *  as well as sanity changes like fixing the spelling of "random" and 
- *  other assets, labels and variables 
+ *   as well as sanity changes like fixing the spelling of "random" and 
+ *   other assets, labels and variables 
  */
 
 class CoverFlow extends Component {
@@ -42,7 +42,7 @@ class CoverFlow extends Component {
           <img src={urlGenerator("music/air/cover.jpg")} alt='Album art - Air' />
           <img src={urlGenerator("music/cb/cover.jpg")} alt='Album art - The Seatbelts' />
           <img src={urlGenerator("music/fred/cover.jpg")} alt='Album art - Fred Hersch' />
-          <img src={urlGenerator("music/greg/cover.jpg")} alt='Album art - Greg Privat' />
+          <img src={urlGenerator("music/greg/cover.jpg")} alt='Album art - Gregory Privat' />
           <img src={urlGenerator("music/jim/cover.jpg")} alt='Album art - Jim Lang' />
           <img src={urlGenerator("music/kat/cover.jpg")} alt='Album art - Kat Epple' />
           <img src={urlGenerator("music/max/cover.jpg")} alt='Album art - Maxis' />

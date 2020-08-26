@@ -35,7 +35,7 @@ export default function SingleAlbum(albumData) {
     position: 'relative'
   };
   const divStyle2 = {
-    backgroundColor: '#242424',
+    backgroundColor: 'rgba(24, 24, 24, 0.6)',
   };
   const divStyle3 = {
     padding: '30px',
@@ -52,16 +52,16 @@ export default function SingleAlbum(albumData) {
               <Paper className={classes.paper}>{albumData.album}</Paper>
             </Grid>
             <Grid item xs>
-              <Paper className={classes.paper}>Extremely long description about the album to pique your interest and to provide something to read and interact with while listening</Paper>
+              <Paper className={classes.paper}>{albumData.description}</Paper>
             </Grid>
             <Grid container display="flex" flexDirection="row" justify="space-between" alignItems="stretch" xs>
               <Button variant="contained" color="primary" href="/">
                 Add to Favorites
               </Button>
-              <Button variant="contained" color="primary" href="/artist/1">
+              <Button variant="outlined" color="primary" href="/artist/1">
                 Artist
               </Button>
-              <Button variant="contained" color="primary" href="/album/1">
+              <Button variant="outlined" color="primary" href="/album/1">
                 Album
               </Button>
               <Button variant="contained" color="primary" href="">

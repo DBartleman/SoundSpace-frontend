@@ -9,6 +9,8 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import urlGenerator from "./downloader";
+
 
 // unused copyright blurb at bottom of page in footer
 // function Copyright() {
@@ -56,10 +58,50 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// development and testing only - to be replaced with state in the future
+const albumData1 = {
+  artist: "The Seatbelts",
+  album: "Cowboy Bebop",
+  description: "Cowboy Bebop is the first album created for the series, and the most easily categorized in terms of genre, as an outlet for many of the trademark bebop tracks. It begins with the show's theme song, \"Tank!\". The track \"Bad Dog No Biscuits\" opens with a cover of the Tom Waits composition \"Midtown\" before diverting in its interpretation.",
+  coverArt: urlGenerator("music/cb/cover.jpg"),
+  songList: [
+    {
+      name: 'Tank!',
+      singer: "The Seatbelts",
+      cover: urlGenerator("music/cb/cover.jpg"),
+      musicSrc: () => {
+        return Promise.resolve(urlGenerator("music/cb/01_Tank.mp3"))
+      }
+    },
+    {
+      name: 'Rush',
+      singer: "The Seatbelts",
+      cover: urlGenerator("music/cb/cover.jpg"),
+      musicSrc: () => {
+        return Promise.resolve(urlGenerator("music/cb/02_Rush.mp3"))
+      }
+    },
+  ]
+}
+const albumData2 = {
+  artist: "Air",
+  album: "Moon Safari",
+  description: "Air's 1998 debut album Moon Safari is an influential masterpiece that not only started the international career of Jean-Benoît Dunckel and Nicolas Godin, but also found a loyal fanbase all over the world.",
+  coverArt: urlGenerator("music/air/cover.jpg"),
+  songList: []
+}
+const albumData3 = {
+  artist: "Hey Arnold!",
+  album: "Jim Lang",
+  description: "Hey Arnold! is an American animated children's television series created by Craig Bartlett that aired on Nickelodeon from October 7, 1996, to June 8, 2004. The show centers on a fourth grader named Arnold. Episodes center on his experiences navigating urban life and helping fellow classmates and townsfolk.",
+  coverArt: urlGenerator("music/jim/cover.jpg"),
+  songList: []
+}
+
+const albums = [albumData1, albumData2, albumData3];
 
 const artistName = "Sample Artist";
-const artistDescription = "Sample Artist grew up somewhere interesting and had an interesting life before making music, but then settled down and made some rocking tunes with their rich experiences!"
+const artistDescription = "Seatbelts is a Japanese band led by composer and instrumentalist Yoko Kanno. An international ensemble comprising both a stable lineup of musicians and various collaborators, the band was assembled by Kanno in 1998 to perform the soundtrack music for the Cowboy Bebop anime series."
 
 export default function ArtistPage() {
   const classes = useStyles();
@@ -72,7 +114,7 @@ export default function ArtistPage() {
         <div className={classes.heroContent}>
           <Container maxWidth="sm">
             <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-              {artistName}
+              {albumData1.artist}
             </Typography>
             <Typography variant="h5" align="center" color="textSecondary" paragraph>
               {artistDescription}
@@ -96,20 +138,20 @@ export default function ArtistPage() {
         <Container className={classes.cardGrid} maxWidth="md">
           {/* End hero unit */}
           <Grid container spacing={4}>
-            {cards.map((card) => (
+            {albums.map((card) => (
               <Grid item key={card} xs={12} sm={6} md={4}>
                 <Card className={classes.card}>
                   <CardMedia
                     className={classes.cardMedia}
-                    image="https://source.unsplash.com/random"
-                    title="Image title"
+                    image={card.coverArt}
+                    title={card.album}
                   />
                   <CardContent className={classes.cardContent}>
                     <Typography gutterBottom variant="h5" component="h2">
-                      Album Name
+                      {card.album}
                     </Typography>
                     <Typography>
-                      optional short description of the album
+                      {card.description}
                     </Typography>
                   </CardContent>
                   <CardActions>
