@@ -35,10 +35,14 @@ export default function SingleAlbum(albumData) {
     position: 'relative'
   };
   const divStyle2 = {
+    borderRadius: '15px',
     backgroundColor: 'rgba(24, 24, 24, 0.6)',
   };
   const divStyle3 = {
     padding: '30px',
+  }
+  const divStyle4 = {
+    width: '100%',
   }
   return (
     <div style={divStyle1}>
@@ -52,16 +56,16 @@ export default function SingleAlbum(albumData) {
               <Paper className={classes.paper}>{albumData.album}</Paper>
             </Grid>
             <Grid item xs>
-              <Paper className={classes.paper}>{albumData.description}</Paper>
+              <Paper className={classes.paper}>{albumData.albumDescription}</Paper>
             </Grid>
             <Grid container display="flex" flexDirection="row" justify="space-between" alignItems="stretch" xs>
               <Button variant="contained" color="primary" href="/">
                 Add to Favorites
               </Button>
-              <Button variant="outlined" color="primary" href="/artist/1">
+              <Button variant="contained" color="primary" href="/artist/1">
                 Artist
               </Button>
-              <Button variant="outlined" color="primary" href="/album/1">
+              <Button variant="contained" color="primary" href="/album/1">
                 Album
               </Button>
               <Button variant="contained" color="primary" href="">
@@ -72,7 +76,7 @@ export default function SingleAlbum(albumData) {
         </Grid>
         <Grid container direction="column" justify="center" alignItems="center" spacing={5} style={divStyle3}>
           <Grid item xs>
-            <img src={albumData.coverArt} alt='Album art - Cowboy Bebop' />
+            <img src={albumData.coverArt} alt='Album art - Cowboy Bebop' style={divStyle4}/>
           </Grid>
         </Grid>
       </Box>

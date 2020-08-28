@@ -54,6 +54,10 @@ const albumData3 = {
 
 const albums = [albumData1, albumData2, albumData3];
 
+// const divStyle1 = {
+//   backgroundColor: 'rgba(24, 24, 24, 0.6)',
+// }
+
 class CoverFlow extends Component {
   constructor(props) {
     super(props);
@@ -76,11 +80,13 @@ class CoverFlow extends Component {
           active={this.state.active}
         >
           <div
-            // onClick={() => fn()}
+            onClick={() => console.log("You have clicked the cover flow album art!")}
             // onClick should start playing the track, possibly
             // onKeyDown={() => fn()}
             role="menuitem"
             tabIndex="0"
+            // className="coverart"
+            // style={divStyle1}
           >
             
           </div>
