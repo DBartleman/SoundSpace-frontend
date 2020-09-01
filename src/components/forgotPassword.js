@@ -95,11 +95,6 @@ export default function ForgotPassword() {
             Send Email
           </Button>
           <Grid container>
-            {/* <Grid item xs>
-              <Link href="#" variant="body2">
-                Forgot password?
-              </Link>
-            </Grid> */}
             <Grid item>
               <Link href="/login" variant="body2">
                 {"Back to login page"}
@@ -108,9 +103,6 @@ export default function ForgotPassword() {
           </Grid>
         </form>
       </div>
-      {/* <Box mt={8}>
-        <Copyright />
-      </Box> */}
     </Container>
   );
 }
