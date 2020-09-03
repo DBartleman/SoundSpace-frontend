@@ -4,7 +4,7 @@ import { Provider } from "react-redux";
 import storeConfig from "./storeActions/storeConfig";
 import { BrowserRouter } from "react-router-dom";
 import jwt_decode from 'jwt-decode'
-import App from "./App";
+import App from './App';
 
 let store;
 
