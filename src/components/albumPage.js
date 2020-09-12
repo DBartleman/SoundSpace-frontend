@@ -50,6 +50,13 @@ export default function AlbumPage() {
   const albums = [albumData1, albumData2, albumData3];
 
   const divStyle0 = {
+    margin: '0',
+    position: 'absolute',
+    height: '100vh',
+    width: '100vw',
+  };
+
+  const divStyle1 = {
     zIndex: '0', 
     position: 'absolute',
     height: '100vh',
@@ -59,11 +66,11 @@ export default function AlbumPage() {
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
-  }
+  };
   return (
-    <>
-      <div style={divStyle0} />   {/* blurred backgorund image */}
+    <div style={divStyle0}>
+      <div style={divStyle1} />   {/* blurred backgorund image */}
       <SingleAlbum {...albumData1} />   {/* Album showcase content */}
-    </>
+    </div>
   );
 };
