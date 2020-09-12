@@ -14,15 +14,9 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
 	)} />
 )
 
-const divStyle = {
-	backgroundImage: "linear-gradient(to botttom right, #4880EC, #019CAD)"
-	//TODO: above does not work. 
-	// I know I should put this in a proper CSS file that changes the body, but my CSS file does not currently get recognized by the react app.
-}
-
 function App() {
 	return (
-		<div style={divStyle}>
+		<div>
 			<Switch>
 				<Route exact path="/login" component={Login} />
 				<Route exact path="/signup" component={Signup} />
