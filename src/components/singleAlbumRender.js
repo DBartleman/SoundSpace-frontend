@@ -1,6 +1,5 @@
 import React from "react";
 import Button from '@material-ui/core/Button';
-//import { Link } from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Box from '@material-ui/core/Box';
@@ -81,30 +80,5 @@ export default function SingleAlbum(albumData) {
         </Grid>
       </Box>
     </div>
-    // <Box display="flex" flexDirection="row" justify="center" alignItems="stretch" style={divStyle2}>
-    //   <Grid container direction="column" justify="center" alignItems="center" spacing={5}>
-    //     <Grid item sm>
-    //       <Grid item xs>
-    //         <Paper className={classes.paper}>Artist Name</Paper>
-    //       </Grid>
-    //       <Grid item xs>
-    //         <Paper className={classes.paper}>Album</Paper>
-    //       </Grid>
-    //       <Grid item xs>
-    //         <Paper className={classes.paper}>Add to Favorites button or something</Paper>
-    //       </Grid>
-    //       <Grid item xs>
-    //         <Paper className={classes.paper}>Extremely long description about the album to pique your interest and to provide something to read and interact with while listening</Paper>
-    //       </Grid>
-    //     </Grid>
-    //   </Grid>
-    //   {/* <Box display="flex" flexDirection="column" alignItems="center"> */}
-    //   <Grid container direction="column" justify="center" alignItems="center" spacing={5} style={divStyle3}>
-    //     <Grid item xs>
-    //       <img src={albumData.coverArt} alt='Album art - Cowboy Bebop' />
-    //     </Grid>
-    //   </Grid>
-    //   {/* </Box> */}
-    // </Box>
   );
 };

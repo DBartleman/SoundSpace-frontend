@@ -54,9 +54,6 @@ const albumData3 = {
 
 const albums = [albumData1, albumData2, albumData3];
 
-// const divStyle1 = {
-//   backgroundColor: 'rgba(24, 24, 24, 0.6)',
-// }
 
 class CoverFlow extends Component {
   constructor(props) {
@@ -70,7 +67,7 @@ class CoverFlow extends Component {
   render() {
     return (
       <div>
-        {/* <button onClick={this._handleClick.bind(this)}>Random</button> */}
+        <button onClick={this._handleClick.bind(this)}>Random</button>
         <Coverflow
           width={960}
           height={700}
