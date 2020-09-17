@@ -67,7 +67,9 @@ class CoverFlow extends Component {
   render() {
     return (
       <div>
-        <button onClick={this._handleClick.bind(this)}>Random</button>
+        {/* <button onClick={this._handleClick.bind(this)}>Random</button> */}
+        {/* I have no idea how the above button chooses a random coverflow element... */}
+        {/* I think it refreshes the component, which already picks a random one to start as-is */}
         <Coverflow
           width={960}
           height={700}

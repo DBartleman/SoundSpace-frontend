@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(2),
   },
   heroContent: {
-    backgroundColor: theme.palette.background.paper,
+    // backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(8, 0, 6),
   },
   heroButtons: {
@@ -53,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   footer: {
-    backgroundColor: theme.palette.background.paper,
+    // backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(6),
   },
 }));
@@ -103,12 +103,18 @@ const albumData3 = {
 
 const albums = [albumData1, albumData2, albumData3];
 
+const testStyle = {
+  backgroundColor: "red",
+}
+
+//TODO: this component cannot change it's style no matter what I do
+
 export default function ArtistPage() {
   const classes = useStyles();
 
   return (
-    <React.Fragment>
-      <CssBaseline />
+    <React.Fragment style={testStyle}>
+      {/* <CssBaseline /> */}
       <main>
         {/* Hero unit */}
         <div className={classes.heroContent}>
