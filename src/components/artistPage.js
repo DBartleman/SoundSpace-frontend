@@ -103,17 +103,11 @@ const albumData3 = {
 
 const albums = [albumData1, albumData2, albumData3];
 
-const testStyle = {
-  backgroundColor: "red",
-}
-
-//TODO: this component cannot change it's style no matter what I do
-
 export default function ArtistPage() {
   const classes = useStyles();
 
   return (
-    <React.Fragment style={testStyle}>
+    <React.Fragment>
       {/* <CssBaseline /> */}
       <main>
         {/* Hero unit */}
