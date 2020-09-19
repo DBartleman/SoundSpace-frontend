@@ -12,20 +12,6 @@ import Container from '@material-ui/core/Container';
 import urlGenerator from "./downloader";
 
 
-// unused copyright blurb at bottom of page in footer
-// function Copyright() {
-//   return (
-//     <Typography variant="body2" color="textSecondary" align="center">
-//       {'Copyright © '}
-//       <Link color="inherit" href="https://material-ui.com/">
-//         Your Website
-//       </Link>{' '}
-//       {new Date().getFullYear()}
-//       {'.'}
-//     </Typography>
-//   );
-// }
-
 const useStyles = makeStyles((theme) => ({
   icon: {
     marginRight: theme.spacing(2),
@@ -169,16 +155,8 @@ export default function ArtistPage() {
           </Grid>
         </Container>
       </main>
-      {/* Footer */}
-      <footer className={classes.footer}>
-        {/* <Typography variant="h6" align="center" gutterBottom>
-          Record label name?
-        </Typography>
-        <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
-          Record label info, perhaps?
-        </Typography> */}
-      </footer>
-      {/* End footer */}
+      {/* Extra space at the end in the form of an empty footer */}
+      <footer className={classes.footer}></footer>
     </React.Fragment>
   );
 }
