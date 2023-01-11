@@ -30,7 +30,7 @@
     "@material-ui/icons": "^4.9.1",
     "aws-sdk": "^2.718.0",
     "dotenv": "^8.2.0",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "jwt-decode": "^2.2.0",
     "jwt-encode": "^1.0.1",
     "node-vibrant": "^3.1.5",
